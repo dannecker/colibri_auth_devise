@@ -1,0 +1,21 @@
+<% @body_id = 'signup' %>
+
+<%= render :partial => 'colibri/shared/error_messages', :locals => { :target => @user } %>
+
+<div id="new-customer">
+  <h6><%= Colibri.t(:new_customer) %></h6>
+
+  <div data-hook="signup">
+    <%= form_for resource, :as => :colibri_user, :url => colibri.registration_path(@user) do |f| %>
+      <div data-hook="signup_inside_form">
+        <%= render :partial => 'colibri/shared/user_form', :locals => { :f => f } %>
+        <p><%= f.submit Colibri.t(:create), :class => 'button primary' %></p>
+      </div>
+    <% end %>
+    <%= Colibri.t(:or) %> <%= link_to Colibri.t(:login_as_existing), colibri.login_path %>
+
+  </div>
+
+</div>
+
+<div data-hook="login_extras"></div>

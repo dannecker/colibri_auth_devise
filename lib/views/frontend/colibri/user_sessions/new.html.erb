@@ -1,0 +1,15 @@
+<% if flash[:alert] %>
+  <div class="flash errors"><%= flash[:alert] %></div>
+<% end %>
+
+<% @body_id = 'login' %>
+<div id="existing-customer">
+  <h6><%= Colibri.t(:login_as_existing) %></h6>
+  <div data-hook="login">
+    <%= render :partial => 'colibri/shared/login' %>
+    <%= Colibri.t(:or) %>
+    <%= link_to Colibri.t(:create_a_new_account), colibri.signup_path %> |
+    <%= link_to Colibri.t(:forgot_password), colibri.recover_password_path %>
+  </div>
+</div>
+<div data-hook="login_extras"></div>

@@ -1,0 +1,17 @@
+<%= render :partial => 'colibri/shared/error_messages', :locals => { :target => @colibri_user } %>
+
+<div id="forgot-password">
+  <h6><%= Colibri.t(:forgot_password) %></h6>
+
+  <p><%= Colibri.t(:instructions_to_reset_password) %></p>
+
+  <%= form_for Colibri::User.new, :as => :colibri_user, :url => colibri.reset_password_path do |f| %>
+    <p>
+      <%= f.label :email, Colibri.t(:email) %><br />
+      <%= f.email_field :email %>
+    </p>
+    <p>
+      <%= f.submit Colibri.t(:reset_password), :class => 'button primary' %>
+    </p>
+  <% end %>
+</div>

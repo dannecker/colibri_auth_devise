@@ -1,0 +1,14 @@
+<% if colibri_current_user %>
+  <ul id="login-nav" class="inline-menu">
+    <li data-hook="user-logged-in-as"><%= Colibri.t(:logged_in_as) %>: <%= colibri_current_user.email %></li>
+    <li data-hook="user-account-link"><i class="icon-user"></i><%= link_to Colibri.t(:account), colibri.edit_user_path(colibri_current_user) %></li>
+    <li data-hook="user-logout-link"><i class="icon-signout"></i><%= link_to Colibri.t(:logout), colibri.logout_path %></li>
+
+    <% if colibri.respond_to? :root_path %>
+      <li data-hook="store-frontend-link">
+        <i class="icon-external-link"></i>
+        <%= link_to Colibri.t(:back_to_store), colibri.root_path, :target => '_blank' %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

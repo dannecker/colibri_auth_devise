@@ -1,0 +1,10 @@
+<%= render :partial => 'colibri/shared/error_messages', :locals => { :target => @user } %>
+
+<h1><%= Colibri.t(:editing_user) %></h1>
+
+<%= form_for Colibri::User.new, :as => @user, :url => colibri.user_path(@user), :method => :put do |f| %>
+  <%= render :partial => 'colibri/shared/user_form', :locals => { :f => f } %>
+  <p>
+    <%= f.submit Colibri.t(:update), :class => 'button primary' %>
+  </p>
+<% end %>

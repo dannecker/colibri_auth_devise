@@ -1,0 +1,17 @@
+<p>
+  <%= f.label :email, Colibri.t(:email) %><br />
+  <%= f.email_field :email, :class => 'title' %>
+</p>
+<div id="password-credentials">
+  <p>
+    <%= f.label :password, Colibri.t(:password) %><br />
+    <%= f.password_field :password, :class => 'title' %>
+  </p>
+
+  <p>
+    <%= f.label :password_confirmation, Colibri.t(:confirm_password) %><br />
+    <%= f.password_field :password_confirmation, :class => 'title' %>
+  </p>
+</div>
+
+<div data-hook="signup_below_password_fields"></div>

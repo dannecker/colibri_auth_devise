@@ -1,0 +1,6 @@
+<% if colibri_current_user %>
+  <li><%= link_to Colibri.t(:my_account), colibri.account_path %></li>
+  <li><%= link_to Colibri.t(:logout), colibri.logout_path %></li>
+<% else %>
+  <li id="link-to-login"><%= link_to Colibri.t(:login), colibri.login_path %></li>
+<% end %>

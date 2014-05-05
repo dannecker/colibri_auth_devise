@@ -1,0 +1,15 @@
+<%= render :partial => 'colibri/shared/error_messages', :locals => { :target => @colibri_user } %>
+<h2><%= Colibri.t(:change_my_password) %></h2>
+
+<%= form_for @colibri_user, :as => :colibri_user, :url => colibri.update_password_path, :method => :put do |f| %>
+  <p>
+    <%= f.label :password, Colibri.t(:password) %><br />
+    <%= f.password_field :password %><br />
+  </p>
+  <p>
+    <%= f.label :password_confirmation, Colibri.t(:confirm_password) %><br />
+    <%= f.password_field :password_confirmation %><br />
+  </p>
+  <%= f.hidden_field :reset_password_token %>
+  <%= f.submit Colibri.t(:update), :class => 'button primary' %>
+<% end %>

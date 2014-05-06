@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'colibri', github: 'colibri/colibri', branch: 'master'
+gem 'colibri', github: 'dannecker/colibri', branch: 'master'
 
 gemspec

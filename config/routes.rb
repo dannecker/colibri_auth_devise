@@ -33,7 +33,7 @@ Colibri::Core::Engine.add_routes do
 
   resource :account, :controller => 'users'
 
-  namespace :admin do
+  namespace :backoffice do
     devise_for :colibri_user,
                :class_name => 'Colibri::User',
                :controllers => { :sessions => 'colibri/admin/user_sessions',
